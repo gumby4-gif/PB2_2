@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Beecher High School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --sage: #7a9171;
+      --sage-light: #a8be9f;
+      --sage-pale: #d4e3cf;
+      --sage-mist: #edf4eb;
+      --forest: #3d5c3a;
+      --moss: #5c7355;
+      --cream: #f5f0e8;
+      --warm-white: #faf8f3;
+      --earth: #8b7355;
+      --linen: #e8e0d0;
+      --ink: #2a2a24;
+      --ink-soft: #4a4a40;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Jost', sans-serif;
+      background: linear-gradient(to bottom, var(--sage-mist), var(--warm-white));
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 240, 232, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(122, 145, 113, 0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--forest);
+      text-transform: uppercase;
+    }
+
+    .nav-logo img {
+      width: 35px;
+      height: 35px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .nav-back {
+      font-size: 0.9rem;
+      color: var(--forest);
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--sage);
+    }
+
+    .nav-back:hover {
+      background: var(--sage);
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 160px 1.25rem 3rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background: var(--sage-mist);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--sage);
+    }
+
+    section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <img src="../Images/Retlogo.png" alt="Bunny Hill Native Landscapes_home" style="width: 100px; height: auto;" />
+    </a>
+    <a class="nav-back" href="../index.html">← Return to main site</a>
+  </nav>
+
+  <main>
+    <h1>Project Beecher High School</h1>
+    <div class="meta">Status: Completed · Owner: Erin Amanda Schulz · Bunny Hill Native Landscapes</div>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        The Beecher High School Outdoor Classroom is a place-based education initiative developed in
+        partnership with Discovering PLACE — a collective of Flint-area K–12 schools, University of
+        Michigan-Flint faculty and staff, community organizations, and parents. Working together with
+        Beecher Middle/High School, a Flint public school, the design team created a place-based outdoor
+        classroom and developed a corresponding implementation plan, best practices guide, and integrated
+        curriculum. The overarching goal is to strengthen the presence of place-based education at
+        Beecher and to document the process so that the experience can serve as a framework for other
+        schools seeking to incorporate place-based learning into their own educational practices.
+      </p>
+      <p style="margin-top:0.75rem;">
+        The site is organized around eight distinct zones: a Native Plant &amp; Butterfly Spiral with
+        informal seating and boulders; an Outdoor Meeting Space with wood and tire seating beneath shade
+        sails and native prairie plantings; a Miniature Orchard of apple and cherry trees; an Entrance
+        Garden featuring an arbor, native plantings, and educational signage along a decomposed granite
+        path; a Vegetable &amp; Fruit Garden with raised beds, communal beds, compost bin, tool shed,
+        and rain barrels; a Trail Extension to a Pond boardwalk through existing forest; a Native Bush
+        Hedge lawn edge of Gro-Low Fragrant Sumac; and a Path to Water Source marked by a commemorative
+        boulder. Material choices throughout — recycled tires as planters and seating, wooden boardwalk,
+        hoop houses, permeable concrete pavers, and decomposed granite — evoke an easygoing, imaginative
+        atmosphere while extending a nod to Flint's long history in the state automobile industry.
+      </p>
+    </section>
+
+    <section>
+      <h2>Design Goals</h2>
+      <p>
+        Integrate curriculum across Art, Language Arts, Math, Science, and Social Studies through
+        outdoor learning experiences · Maximize maintenance, safety, and accessibility for students,
+        staff, and community volunteers · Minimize site and habitat disruption by working with existing
+        topography, trees, and site features · Incorporate existing site elements including the pond,
+        baseball field, and forest edge · Appeal to a variety of ages across the Beecher Middle and High
+        School campus · Feature local culture and environment by referencing Flint's automotive heritage
+        and native Michigan prairie and butterfly species · Select native plants that provide sanctuary
+        for insects, birds, and small mammals, reduce soil erosion, and increase water infiltration ·
+        Create student-built educational signage teaching local visitors about history, habitat
+        restoration, and the outdoor classroom's learning opportunities.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Slides</h2>
+      <p>Design documentation and presentation slides for the Beecher High School outdoor classroom.</p>
+
+      <div class="slideshow">
+        <div class="slide-track">
+          <img class="slide active" src="BeecherHS/Beecher_Conceptual_Site_Plan.png" alt="Conceptual Site Plan" />
+          <img class="slide" src="BeecherHS/Beecher_Materials_and_Character.png" alt="Materials and Character" />
+          <img class="slide" src="BeecherHS/Beecher_Native_Plant_Palette.png" alt="Native Plant Palette" />
+          <img class="slide" src="BeecherHS/Beecher_Vegetable_Garden_Elevation.png" alt="Vegetable Garden Elevation" />
+          <img class="slide" src="BeecherHS/Beecher_Entrance_Elevation.png" alt="Entrance Elevation" />
+          <img class="slide" src="BeecherHS/Beecher_Outdoor_Meeting_Space.png" alt="Outdoor Meeting Space" />
+          <img class="slide" src="BeecherHS/Beecher_Analysis_of_Site_Context.png" alt="Analysis of Site Context" />
+          <img class="slide" src="BeecherHS/Beecher_Layout.png" alt="Beecher Layout" />
+          <img class="slide" src="BeecherHS/Beecher_Entrance2.png" alt="Entrance" />
+          <img class="slide" src="BeecherHS/Growing_Our_Place.png" alt="Growing Our Place" />
+          <img class="slide" src="BeecherHS/Pollinators_Journey.png" alt="Pollinator's Journey" />
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="changeSlide(-1)">&#8592; Prev</button>
+          <span class="slide-counter"><span id="current-slide">1</span> / 11</span>
+          <button class="slide-btn" onclick="changeSlide(1)">Next &#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Current Status</h2>
+      <p>
+        Design and curriculum development are complete. Deliverables include the full seven-slide
+        presentation package covering the Conceptual Site Plan, Materials &amp; Character, Native Plant
+        Palette, Vegetable Garden Elevation, Entrance Elevation, Outdoor Meeting Space, and Analysis of
+        Site Context. The accompanying <em>Growing Our Place</em> curriculum — spanning Art, Language
+        Arts, Math, Science, and Social Studies — provides lesson plans including "Why Do We Eat What
+        We Eat?" and "Pollinator's Journey," both developed as products of the SNRE Master's Project at
+        the University of Michigan. The native plant palette features thirteen Michigan species:
+        Bee Balm, Joe-Pye Weed, Gro-Low Fragrant Sumac, Butterfly Weed, Orange Coneflower, Indian
+        Grass, Common Milkweed, Apple Tree, Wild Strawberry, Little Blue Stem, Purple Love Grass,
+        New England Aster, and Blazing Star.
+      </p>
+    </section>
+  </main>
+
+  <style>
+    .slideshow {
+      margin-top: 1rem;
+    }
+    .slide-track {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--linen);
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .slide-btn {
+      background: var(--sage);
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .slide-btn:hover {
+      background: var(--forest);
+    }
+    .slide-counter {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      min-width: 50px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(dir) {
+      slides[current].classList.remove('active');
+      current = (current + dir + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      document.getElementById('current-slide').textContent = current + 1;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunny Hill Native Landscapes · Erin Amanda Schulz</title>
+<meta name="description" content="Bunny Hill Native Landscapes, founded by Erin Amanda Schulz — ecological landscape design featuring native plants, outdoor classrooms, and habitat restoration." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sage: #7a9171;
+    --sage-light: #a8be9f;
+    --sage-pale: #d4e3cf;
+    --sage-mist: #edf4eb;
+    --forest: #3d5c3a;
+    --moss: #5c7355;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f3;
+    --earth: #8b7355;
+    --linen: #e8e0d0;
+    --ink: #2a2a24;
+    --ink-soft: #4a4a40;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.4rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,232,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(122,145,113,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--forest);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--forest); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--forest);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Decorative botanical line art */
+  .botanical-bg {
+    position: absolute;
+    top: -2rem;
+    right: -3rem;
+    width: 340px;
+    opacity: 0.08;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.05;
+    animation: fadeUp 1s ease 0.15s both;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .hero-name .amp {
+    font-style: italic;
+    color: var(--sage-pale);
+    font-size: 0.8em;
+  }
+
+  .hero-tagline {
+    margin-top: 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: var(--sage-pale);
+    font-weight: 200;
+    line-height: 1.8;
+    max-width: 28ch;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    text-decoration: none;
+    font-weight: 400;
+    transition: gap 0.3s, color 0.3s;
+    animation: fadeUp 1s ease 0.45s both;
+  }
+
+  .hero-cta:hover { gap: 1.6rem; color: var(--warm-white); }
+
+  .hero-cta .line {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s;
+  }
+
+  .hero-cta:hover .line { width: 60px; }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--sage-mist);
+  }
+
+  .hero-image-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  /* Title + photo row */
+  .hero-name-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+
+  /* Erin portrait sits beside the title */
+  .hero-left-portrait {
+    width: 145px;
+    height: 200px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(168,190,159,0.35);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    margin-top: 0.2rem;
+  }
+
+  .hero-left-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* Hero right: two images stacked, each filling half the panel */
+  .hero-image-mosaic {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .mosaic-main {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #7a9e75 0%, #4a7344 100%);
+  }
+
+  .mosaic-secondary {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #9bb595 0%, #6e9469 100%);
+  }
+
+  .mosaic-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  /* Garden: show full image without cropping */
+  .mosaic-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .mosaic-main:hover img,
+  .mosaic-secondary:hover img { transform: scale(1.05); }
+
+  .portrait-overlay { display: none; }
+  .portrait-fallback { display: none; }
+  .portrait-placeholder { display: none; }
+  .hero-thumb-strip { display: none; }
+  .mosaic-portrait { display: none; }
+
+  .hero-right-label {
+    position: absolute;
+    bottom: 3rem;
+    right: 2.5rem;
+    text-align: right;
+  }
+
+  .hero-right-label p {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 300;
+  }
+
+  /* ── CREDENTIALS ── */
+  .credentials {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top: 1px solid var(--linen);
+    padding-top: 2rem;
+  }
+
+  .cred-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cred-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cred-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-top: 0.1rem;
+  }
+
+  .cred-logo-um {
+    background: var(--sage-mist);
+    color: var(--forest);
+    border: 1px solid var(--sage-pale);
+  }
+
+  .cred-logo-rg {
+    background: var(--forest);
+    color: var(--sage-pale);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cred-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .cred-text strong {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--forest);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .cred-text span {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .cred-date {
+    font-size: 0.7rem !important;
+    color: var(--sage) !important;
+    letter-spacing: 0.05em;
+  }
+
+  .cred-description {
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 52ch;
+  }
+
+  /* ── INTRO / ABOUT ── */
+  .intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    min-height: 80vh;
+    background: var(--cream);
+  }
+
+  .intro-left {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--linen);
+  }
+
+  .section-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .intro-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--forest);
+  }
+
+  .intro-left h2 em { font-style: italic; }
+
+  .intro-right {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .intro-right p {
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 52ch;
+  }
+
+  .intro-right p strong {
+    color: var(--forest);
+    font-weight: 500;
+  }
+
+  /* Erin's name feature */
+  .name-feature {
+    margin-top: 2.5rem;
+    padding: 2rem 2.4rem;
+    border-left: 2px solid var(--sage);
+    background: var(--sage-mist);
+  }
+
+  .name-feature .full-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--forest);
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  .name-feature .full-name span {
+    display: block;
+    font-size: 0.62rem;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--sage-mist);
+    padding: 7rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sage-light), transparent);
+  }
+
+  .philosophy-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+    line-height: 1.5;
+    margin: 2rem 0;
+  }
+
+  .philosophy cite {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-style: normal;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 0;
+    background: var(--warm-white);
+  }
+
+  .services-header {
+    padding: 0 4rem 4rem;
+  }
+
+  .services-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--linen);
+  }
+
+  .service-card {
+    padding: 3.5rem 3.5rem;
+    border-right: 1px solid var(--linen);
+    transition: background 0.4s;
+    cursor: default;
+  }
+
+  .service-card:last-child { border-right: none; }
+
+  .service-card:hover { background: var(--sage-mist); }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.84rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  /* ── NATIVE PLANTS FEATURE ── */
+  .plants-feature {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 70vh;
+    background: var(--forest);
+    overflow: hidden;
+  }
+
+  .plants-text {
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .plants-text .section-tag { color: var(--sage-light); }
+
+  .plants-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .plants-text h2 em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .plants-text p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 44ch;
+    margin-bottom: 1rem;
+  }
+
+  .plant-list {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 2rem;
+    list-style: none;
+  }
+
+  .plant-list li {
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--sage-light);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .plant-list li::before {
+    content: '—';
+    color: var(--sage);
+    font-size: 0.6rem;
+  }
+
+  .plants-visual {
+    background: linear-gradient(160deg, #9bb595 0%, #6e9469 50%, #4a7344 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Botanical SVG illustration */
+  .botanical-art {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── PORTFOLIO GRID ── */
+  .portfolio {
+    padding: 7rem 4rem;
+    background: var(--cream);
+  }
+
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  .portfolio-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .portfolio-header a {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: gap 0.3s;
+  }
+
+  .portfolio-header a:hover { gap: 1.2rem; }
+
+  /* ── FEATURED PROJECTS (Mott + Beecher) ── */
+  .portfolio-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .portfolio-feature-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 480px;
+  }
+
+  .portfolio-feature-card .portfolio-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease;
+  }
+
+  .portfolio-feature-card:hover .portfolio-thumb { transform: scale(1.05); }
+
+  .feature-badge {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.8rem;
+    z-index: 3;
+    background: var(--sage);
+    color: var(--warm-white);
+    font-size: 0.55rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.35rem 0.85rem;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .portfolio-feature-card .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,55,28,0.88) 0%, rgba(30,55,28,0.2) 55%, transparent 100%);
+    opacity: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.2rem 2.4rem;
+    z-index: 2;
+  }
+
+  .feature-label {
+    color: var(--warm-white);
+  }
+
+  .feature-label .project-type {
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.45rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  .feature-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 0.7rem;
+  }
+
+  .feature-label .project-desc {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 44ch;
+    font-family: 'Jost', sans-serif;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s 0.05s, transform 0.4s 0.05s;
+  }
+
+  .portfolio-feature-card:hover .project-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .feature-label .project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.8rem;
+  }
+
+  .project-tag {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-pale);
+    border: 1px solid rgba(168,190,159,0.4);
+    padding: 0.25rem 0.65rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  /* ── STANDARD PORTFOLIO GRID (5 remaining) ── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+  }
+
+  .portfolio-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    min-height: 260px;
+  }
+
+  /* Left card spans both rows */
+  .portfolio-item:first-child {
+    grid-row: span 2;
+    min-height: 522px;
+  }
+
+  .portfolio-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  /* For gradient placeholder divs acting as thumbs */
+  div.portfolio-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.7s ease;
+  }
+
+  .portfolio-item:hover .portfolio-thumb { transform: scale(1.06); }
+
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(61,92,58,0.75) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+  .portfolio-label {
+    color: var(--warm-white);
+  }
+
+  .portfolio-label span {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .portfolio-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  /* Gradient placeholders for portfolio */
+  /* Featured */
+  .port-mott   { position:absolute; inset:0; background: linear-gradient(145deg, #4a7c6e 0%, #2d5c4e 50%, #1e3d34 100%); display:flex; align-items:center; justify-content:center; }
+  .port-beecher { position:absolute; inset:0; background: linear-gradient(145deg, #6a8c5a 0%, #3d6638 50%, #2a4a28 100%); display:flex; align-items:center; justify-content:center; }
+  /* Standard */
+  .port-1 { position:absolute; inset:0; background: linear-gradient(135deg, #7a9e75 0%, #4d7048 100%); display:flex; align-items:center; justify-content:center; }
+  .port-2 { position:absolute; inset:0; background: linear-gradient(135deg, #8aac84 0%, #5f8a5a 100%); display:flex; align-items:center; justify-content:center; }
+  .port-3 { position:absolute; inset:0; background: linear-gradient(135deg, #9bb595 0%, #6e8f69 100%); display:flex; align-items:center; justify-content:center; }
+  .port-4 { position:absolute; inset:0; background: linear-gradient(135deg, #a3b89e 0%, #7a9575 100%); display:flex; align-items:center; justify-content:center; }
+  .port-5 { position:absolute; inset:0; background: linear-gradient(135deg, #7d9e78 0%, #526e4e 100%); display:flex; align-items:center; justify-content:center; }
+
+  /* ── IMAGE SLIDESHOW for featured cards ── */
+  .slide-show {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-show img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  .slide-show img.active { opacity: 1; }
+
+  /* Dot indicators */
+  .slide-dots {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 2.4rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 4;
+  }
+
+  .slide-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  .slide-dot.active {
+    background: var(--sage-light);
+    transform: scale(1.3);
+  }
+  .process {
+    padding: 7rem 4rem;
+    background: var(--warm-white);
+  }
+
+  .process h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-weight: 300;
+    color: var(--forest);
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .process-step {
+    position: relative;
+  }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--sage-pale);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 0.8rem;
+  }
+
+  .process-step p {
+    font-size: 0.82rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--forest);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contact-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .contact-left p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 40ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-info a {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    color: var(--sage-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: color 0.3s;
+  }
+
+  .contact-info a:hover { color: var(--warm-white); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 300;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(168,190,159,0.25);
+    padding: 0.9rem 1.2rem;
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    resize: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.2);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--sage-light);
+    background: rgba(255,255,255,0.09);
+  }
+
+  .form-group textarea { min-height: 110px; }
+
+  .submit-btn {
+    margin-top: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--sage-light);
+    color: var(--sage-light);
+    padding: 1rem 2.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+    font-weight: 300;
+  }
+
+  .submit-btn:hover {
+    background: var(--sage-light);
+    color: var(--forest);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--sage-pale);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+
+  footer p {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--warm-white); }
+  ::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 2px; }
+
+.hero-name .hero-byline {
+  font-size: 0.45em;        /* roughly half the h1 size */
+  font-weight: 300;
+  font-style: normal;
+  color: var(--sage-pale);  /* slightly softer than the main title */
+  letter-spacing: 0.12em;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+Why this works well:
+
+0.45em means it scales relative to the parent h1 — so if the h1 is 5.2rem, the byline becomes about 2.3rem, still impactful but clearly secondary
+color: var(--sage-pale) gives it a softer tone so the eye reads "Bunny Hill Native Landscapes" first, then settles on her name
+margin-top: 0.4rem adds a little breathing room between the title and her name
+
+Would you like me to apply this directly to your index.html and send the updated file?
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Bunny Hill Native Landscapes · Erin Amanda Schulz
+</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#projects">Projects</a></li>
+	<li><a href="blog/blog-rain-garden.html">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <!-- Botanical SVG background -->
+    <svg class="botanical-bg" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M150 380 Q140 300 100 250 Q60 200 80 120 Q100 60 150 20" stroke="white" stroke-width="1.5" fill="none"/>
+      <path d="M150 250 Q200 220 220 170 Q240 120 210 80" stroke="white" stroke-width="1" fill="none"/>
+      <path d="M130 200 Q80 180 60 140 Q40 100 70 60" stroke="white" stroke-width="1" fill="none"/>
+      <ellipse cx="220" cy="80" rx="28" ry="18" transform="rotate(-30 220 80)" stroke="white" stroke-width="1" fill="none"/>
+      <ellipse cx="70" cy="60" rx="22" ry="14" transform="rotate(20 70 60)" stroke="white" stroke-width="1" fill="none"/>
+      <path d="M150 300 Q190 290 200 260 Q210 230 185 210" stroke="white" stroke-width="0.8" fill="none"/>
+      <path d="M140 280 Q100 270 90 240 Q80 210 105 195" stroke="white" stroke-width="0.8" fill="none"/>
+    </svg>
+
+    <p class="hero-eyebrow">Landscape Architecture · Native Planting Design · Northern Virginia</p>
+
+    <!-- Name title beside the photo — title left, photo right -->
+    <div class="hero-name-row">	
+      <h1 class="hero-name">
+  Bunny Hill<br>
+  <em>Native Landscapes</em><br>
+  <span class="hero-byline">by Erin Amanda Schulz</span>
+</h1>
+
+      <div class="hero-left-portrait">
+        <img src="Images/Erin2.png" alt="Erin Amanda Schulz landscape designer Bunny Hill Native Landscapes">
+      </div>
+    </div>
+
+    <p class="hero-tagline">Designing spaces that belong to the land — rooted in Piedmont ecology, shaped by careful hands.</p>
+    <a href="#about" class="hero-cta">
+      <span class="line"></span>
+      Discover the work
+    </a>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-container">
+      <div class="hero-image-mosaic">
+
+        <!-- Jasmine — top half -->
+        <div class="mosaic-main">
+          <img src="Images/Jasmine.jpg" alt="Jasmine in bloom native plant garden Virginia">
+        </div>
+
+        <!-- Garden — bottom half -->
+        <div class="mosaic-secondary">
+          <img src="Images/garden1.png" alt="Native garden detail ecological landscape design">
+        </div>
+
+      </div>
+    </div>
+    <div class="hero-right-label">
+      <p>Landscape Architect</p>
+      <p>Northern Virginia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / INTRO -->
+<section class="intro-section" id="about">
+  <div class="intro-left reveal">
+    <p class="section-tag">About</p>
+    <h2>
+      A landscape<br>
+      designed to <em>belong</em><br>
+      to its place
+    </h2>
+  </div>
+  <div class="intro-right reveal">
+    <p>
+      <strong>Erin Amanda Schulz</strong> is a landscape architect whose practice is rooted in the living intelligence of the Piedmont and Blue Ridge ecosystems of Northern Virginia. Every design begins with listening — to the soil, the light, the native species that once thrived there — and ends with a landscape that feels as if it always belonged.
+    </p>
+    <p>
+      Drawing from deep knowledge of the Mid-Atlantic's rich native flora — from Blue Ridge woodlands to Piedmont meadows — Erin works with homeowners, municipalities, and developers across Loudoun, Fairfax, Arlington, and Alexandria to create outdoor environments that are beautiful, resilient, and ecologically connected.
+    </p>
+    <p>
+      Her philosophy is simple: <strong>the best landscapes don't fight nature — they join it.</strong>
+    </p>
+
+    <div class="name-feature">
+      <span>Principal Landscape Architect</span>
+      <div class="full-name">Erin Amanda Schulz</div>
+    </div>
+
+    <!-- Credentials -->
+    <div class="credentials">
+
+      <div class="cred-group">
+        <p class="cred-label">Experience</p>
+        <div class="cred-item">
+          <div class="cred-logo cred-logo-rg">RG</div>
+          <div class="cred-text">
+            <strong>Landscape Design Assistant</strong>
+            <span>Revolutionary Gardens</span>
+            <span class="cred-date">Mar 2014 – Jan 2015 · 11 mos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cred-group">
+        <p class="cred-label">Education</p>
+        <div class="cred-item">
+          <div class="cred-logo cred-logo-um">M</div>
+          <div class="cred-text">
+            <strong>University of Michigan</strong>
+            <span>MLA, Landscape Architecture</span>
+            <span class="cred-date">2010 – 2013</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-logo cred-logo-um">M</div>
+          <div class="cred-text">
+            <strong>University of Michigan</strong>
+            <span>BS, Linguistics &amp; Biopsychology</span>
+            <span class="cred-date">2004 – 2009</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cred-group">
+        <p class="cred-label">Projects</p>
+        <div class="cred-item">
+          <div class="cred-logo cred-logo-um">M</div>
+          <div class="cred-text">
+            <strong>Master's Project: Growing Our Place</strong>
+            <span>Associated with University of Michigan</span>
+            <span class="cred-date">Jan 2012 – Apr 2013</span>
+            <p class="cred-description">Discovering PLACE and Beecher desired assistance in researching and planning an outdoor classroom on the school grounds, organizing and implementing a series of participatory student and teacher design charrettes, and researching and developing a place-based curriculum for middle and high school students. The overarching goal of the project was to strengthen the presence of place-based education at Beecher, and to document the process of implementing the project so that the experience can be used as a framework for other schools interested in incorporating place-based education into their own educational practices.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY QUOTE -->
+<section class="philosophy">
+  <div class="philosophy-inner reveal">
+    <p class="section-tag">Design Philosophy</p>
+    <blockquote>
+      "I believe every garden should feel inevitable — as if the land chose these plants itself, and we were simply paying attention."
+    </blockquote>
+    <cite>— Erin Amanda Schulz</cite>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <p class="section-tag">What We Offer</p>
+    <h2>Services rooted in<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300">native intelligence</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <path d="M18 32 Q17 24 12 18 Q7 12 10 5" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <path d="M18 18 Q24 14 26 9" stroke="#5c7355" stroke-width="1.2" fill="none"/>
+        <path d="M17 16 Q11 13 9 8" stroke="#5c7355" stroke-width="1.2" fill="none"/>
+        <ellipse cx="26" cy="9" rx="7" ry="5" transform="rotate(-20 26 9)" stroke="#5c7355" stroke-width="1.2" fill="none"/>
+      </svg>
+      <h3>Native Plant Design</h3>
+      <p>Curated planting plans featuring regionally native species chosen for beauty, resilience, and ecological function. From prairie meadows to woodland gardens, every selection supports local pollinators and wildlife.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="18" width="28" height="14" rx="1" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <path d="M4 18 L18 6 L32 18" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <line x1="18" y1="32" x2="18" y2="22" stroke="#5c7355" stroke-width="1.2"/>
+      </svg>
+      <h3>Residential Landscapes</h3>
+      <p>Transforming private gardens into living ecosystems. Full-service design from concept through installation — patios, paths, rain gardens, and naturalized borders that feel effortless year-round.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="14" r="9" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <path d="M18 23 L18 32" stroke="#5c7355" stroke-width="1.5"/>
+        <path d="M12 32 L24 32" stroke="#5c7355" stroke-width="1.5"/>
+        <path d="M14 14 Q18 10 22 14 Q18 18 14 14Z" stroke="#5c7355" stroke-width="1" fill="none"/>
+      </svg>
+      <h3>Ecological Restoration</h3>
+      <p>Returning degraded or conventional landscapes to vibrant native habitat. Invasive removal, soil remediation, phased planting programs, and long-term maintenance guidance for thriving natural systems.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <path d="M6 30 L6 8 M6 8 L28 8 M28 8 L28 30 M6 30 L30 30" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <path d="M12 22 L16 16 L20 20 L24 12" stroke="#5c7355" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h3>Site Analysis & Planning</h3>
+      <p>Comprehensive site assessment including soil testing, drainage mapping, sun studies, and native seed bank evaluation. A thorough read of your land before a single plant goes in the ground.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <path d="M18 4 Q10 12 10 20 Q10 28 18 32 Q26 28 26 20 Q26 12 18 4Z" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <path d="M18 4 L18 32" stroke="#5c7355" stroke-width="1" stroke-dasharray="2 3"/>
+      </svg>
+      <h3>Rain Gardens & Bioswales</h3>
+      <p>Beautiful, functional water management systems planted entirely with native species. Reducing runoff, filtering stormwater, and creating vibrant habitat — all while solving real drainage challenges.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="4" width="28" height="20" rx="1" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+        <line x1="4" y1="12" x2="32" y2="12" stroke="#5c7355" stroke-width="1" stroke-dasharray="2 3"/>
+        <line x1="14" y1="4" x2="14" y2="24" stroke="#5c7355" stroke-width="1" stroke-dasharray="2 3"/>
+        <path d="M12 30 L24 30 L22 24 L14 24Z" stroke="#5c7355" stroke-width="1.5" fill="none"/>
+      </svg>
+      <h3>Consultation & Education</h3>
+      <p>Half-day and full-day consultations for DIY gardeners, community groups, and municipalities. Workshops on native plant ID, planting techniques, and seasonal maintenance that honors native systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NATIVE PLANTS FEATURE -->
+<section class="plants-feature" id="native">
+  <div class="plants-text reveal">
+    <p class="section-tag">Why Native Plants</p>
+    <h2>Plants that <em>know</em><br>how to live here</h2>
+    <p>Native plants evolved alongside the soils, climate, and wildlife of the Mid-Atlantic over thousands of years. From the shady hollows of the Blue Ridge foothills to sunny Piedmont meadows, they require less water, fewer interventions, and no synthetic inputs — while providing irreplaceable habitat for native bees, monarchs, songbirds, and fireflies.</p>
+    <p>When we plant native in Northern Virginia, we're restoring the Piedmont woodland edge, the creek-bank wildflower, and the meadow that once defined this region's landscape before development transformed it.</p>
+    <ul class="plant-list">
+      <li>Virginia Bluebells (Mertensia virginica)</li>
+      <li>Eastern Redbud (Cercis canadensis)</li>
+      <li>Blue Wild Indigo (Baptisia australis)</li>
+      <li>Switchgrass (Panicum virgatum)</li>
+      <li>Black-eyed Susan (Rudbeckia hirta)</li>
+      <li>Butterfly Weed (Asclepias tuberosa)</li>
+      <li>Wild Columbine (Aquilegia canadensis)</li>
+      <li>Joe Pye Weed (Eutrochium purpureum)</li>
+      <li>Pawpaw (Asimina triloba)</li>
+      <li>Spicebush (Lindera benzoin)</li>
+    </ul>
+  </div>
+  <div class="plants-visual">
+    <div class="botanical-art">
+      <svg viewBox="0 0 320 500" width="320" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.35">
+        <!-- Main stem -->
+        <path d="M160 490 Q155 420 135 360 Q110 290 125 210 Q140 140 160 60" stroke="white" stroke-width="2.5" fill="none"/>
+        <!-- Branches right -->
+        <path d="M145 300 Q200 275 220 230 Q240 185 215 145" stroke="white" stroke-width="1.8" fill="none"/>
+        <path d="M135 380 Q180 365 195 330 Q210 300 190 270" stroke="white" stroke-width="1.5" fill="none"/>
+        <!-- Branches left -->
+        <path d="M148 260 Q95 240 80 195 Q65 155 90 115" stroke="white" stroke-width="1.8" fill="none"/>
+        <path d="M140 340 Q100 330 88 295 Q76 262 98 238" stroke="white" stroke-width="1.5" fill="none"/>
+        <!-- Leaves -->
+        <ellipse cx="215" cy="145" rx="38" ry="22" transform="rotate(-30 215 145)" stroke="white" stroke-width="1.5" fill="none"/>
+        <ellipse cx="90" cy="115" rx="32" ry="20" transform="rotate(25 90 115)" stroke="white" stroke-width="1.5" fill="none"/>
+        <ellipse cx="192" cy="270" rx="28" ry="16" transform="rotate(-20 192 270)" stroke="white" stroke-width="1.2" fill="none"/>
+        <ellipse cx="98" cy="238" rx="25" ry="15" transform="rotate(18 98 238)" stroke="white" stroke-width="1.2" fill="none"/>
+        <!-- Flower top -->
+        <circle cx="160" cy="55" r="22" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="160" cy="55" r="10" stroke="white" stroke-width="1.5" fill="none"/>
+        <path d="M160 33 L160 24 M182 55 L191 55 M160 77 L160 86 M138 55 L129 55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M177 38 L183 32 M177 72 L183 78 M143 38 L137 32 M143 72 L137 78" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header reveal">
+    <div>
+      <p class="section-tag">Selected Work</p>
+      <h2>Recent Projects</h2>
+    </div>
+    <a href="#projects">View all projects →</a>
+  </div>
+
+ <!-- FEATURED: Mott Children's Park & Beecher High School -->
+<div class="portfolio-featured reveal">
+
+  <!-- Mott Feature Card -->
+  <div class="portfolio-feature-card">
+    <div class="slide-show" id="mott-slides">
+      <img src="projects/Mott_Childrens_Park/Mott_Childrens_Park1.png" class="active" alt="Mott Children's Park native landscape design Flint Michigan rendering">
+      <img src="projects/Mott_Childrens_Park/Mott_Childrens_Park2.png" alt="Mott Children's Park planting plan ecological design Flint Michigan">
+      <img src="projects/Mott_Childrens_Park/Mott_Childrens_Park3.png" alt="Mott Children's Park outdoor space native plants Flint Michigan">
+      <img src="projects/Mott_Childrens_Park/Mott_Childrens_Park4.png" alt="Mott Children's Park site plan Bunny Hill Native Landscapes">
+    </div>
+
+    <div class="slide-dots" id="mott-dots">
+      <div class="slide-dot active"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+    </div>
+
+    <div class="feature-badge">Feature Project</div>
+    <div class="portfolio-overlay">
+      <!-- your existing overlay content -->
+    </div>
+  </div>
+
+  <!-- Beecher Feature Card -->
+  <div class="portfolio-feature-card">
+    <div class="slide-show" id="beecher-slides">
+      <img src="projects/BeecherHS/Beecher_Layout.png" class="active" alt="Beecher High School outdoor classroom site layout Flint Michigan">
+      <img src="projects/BeecherHS/Beecher_Conceptual_Site_Plan.png" alt="Beecher High School native landscape conceptual site plan Michigan">
+      <img src="projects/BeecherHS/Beecher_Entrance_Elevation.png" alt="Beecher High School entrance elevation outdoor classroom design">
+      <img src="projects/BeecherHS/Beecher_Entrance2.png" alt="Beecher High School entrance garden native plants Michigan">
+      <img src="projects/BeecherHS/Beecher_Vegetable_Garden_Elevation.png" alt="Beecher High School vegetable garden elevation raised beds design">
+      <img src="projects/BeecherHS/Beecher_Outdoor_Meeting_Space.png" alt="Beecher High School outdoor meeting space native prairie plantings">
+      <img src="projects/BeecherHS/Beecher_Native_Plant_Palette.png" alt="Beecher High School native plant palette Michigan species">
+      <img src="projects/BeecherHS/Beecher_Materials_and_Character.png" alt="Beecher High School materials and character outdoor classroom">
+      <img src="projects/BeecherHS/Beecher_Analysis_of_Site_Context.png" alt="Beecher High School site context analysis Flint Michigan">
+      <img src="projects/BeecherHS/Growing_Our_Place.png" alt="Growing Our Place curriculum native landscape Beecher Michigan">
+      <img src="projects/BeecherHS/Pollinators_Journey.png" alt="Pollinator's Journey curriculum native plants butterflies Michigan">
+    </div>
+
+    <div class="slide-dots" id="beecher-dots">
+      <div class="slide-dot active"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+    </div>
+
+    <div class="feature-badge">Feature Project</div>
+    <div class="portfolio-overlay">
+      <!-- Beecher overlay content -->
+    </div>
+  </div>
+
+</div> <!-- NOW we close the wrapper -->
+
+
+  
+
+  <!-- REMAINING 5 PROJECTS -->
+  <div class="portfolio-grid reveal">
+
+    <!-- U.M. Dana Garden — spans 2 rows on left -->
+    <div class="portfolio-item">
+      <div class="slide-show" id="dana-slides" style="position:absolute;inset:0;">
+        <img src="projects/UM_Dana_Garden/UM_Dana_Garden1.png" class="active" alt="University of Michigan Dana Garden native landscape site context Ann Arbor">
+        <img src="projects/UM_Dana_Garden/UM_Dana_Garden2.png" alt="University of Michigan Dana Garden native planting plan Ann Arbor">
+        <img src="projects/UM_Dana_Garden/UM_Dana_Garden3.png" alt="University of Michigan Dana Garden section elevation design">
+        <img src="projects/UM_Dana_Garden/UM_Dana_Garden4.png" alt="University of Michigan Dana Garden native planting detail">
+      </div>
+      <div class="slide-dots" id="dana-dots">
+        <div class="slide-dot active"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-label">
+          <span>Ann Arbor, MI · University of Michigan</span>
+          <h3>U.M. Dana Building Garden</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Big Boy Rain Garden -->
+    <div class="portfolio-item">
+      <div class="slide-show" id="bigboy-slides" style="position:absolute;inset:0;">
+        <img src="projects/Big_Boy_Rain_Garden/Big_Boy_Rain_Garden2.png" alt="Big Boy Rain Garden native planting plan ecological stormwater design" class="active">
+        <img src="projects/Big_Boy_Rain_Garden/Big_Boy_Rain_Garden1.png" alt="Big Boy Rain Garden site context Michigan">
+        <img src="projects/Big_Boy_Rain_Garden/Big_Boy_Rain_Garden3.png" alt="Big Boy Rain Garden technical stormwater management details">
+        <img src="projects/Big_Boy_Rain_Garden/Big_Boy_Rain_Garden4.png" alt="Big Boy Rain Garden cross section ecological design">
+      </div>
+	  <div class="slide-dots" id="bigboy-dots">
+      <div class="slide-dot active"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+      <div class="slide-dot"></div>
+     </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-label">
+          <span>Ann Arbor, MI · Stormwater Management</span>
+          <h3>Big Boy Rain Garden</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- North Campus Gateway -->
+    <div class="portfolio-item">
+      <div class="slide-show" id="northcampus-slides" style="position:absolute;inset:0;">
+        <img src="projects/North_Campus_Gateway/North_Campus_Gateway1.png" class="active" alt="University of Michigan North Campus Gateway native landscape rendering Ann Arbor">
+        <img src="projects/North_Campus_Gateway/North_Campus_Gateway2.png" alt="North Campus Gateway entrance landscape design rendering University of Michigan">
+        <img src="projects/North_Campus_Gateway/North_Campus_Gateway3.png" alt="North Campus Gateway native planting plan University of Michigan">
+        <img src="projects/North_Campus_Gateway/North_Campus_Gateway4.png" alt="North Campus Gateway site design Bunny Hill Native Landscapes">
+      </div>
+      <div class="slide-dots" id="northcampus-dots">
+        <div class="slide-dot active"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-label">
+          <span>Ann Arbor, MI · University of Michigan</span>
+          <h3>North Campus Gateway</h3>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Water Street Development -->
+    <div class="portfolio-item">
+      <div class="slide-show" id="waterst-slides" style="position:absolute;inset:0;">
+        <img src="projects/Water_Street_Development/Water_St_Dev1.png" class="active" alt="Water Street Development native landscape site overview ecological design">
+        <img src="projects/Water_Street_Development/Water_St_Dev2.png" alt="Water Street Development context map ecological design">
+        <img src="projects/Water_Street_Development/Water_St_Dev3.png" alt="Water Street Development master plan native landscapes">
+        <img src="projects/Water_Street_Development/Water_St_Dev4.png" alt="Water Street Development character rendering native planting">
+        <img src="projects/Water_Street_Development/Water_St_Dev5.png" alt="Water Street Development section native landscape design">
+        <img src="projects/Water_Street_Development/Water_St_Dev6.png" alt="Water Street Development detail planting plan">
+      </div>
+      <div class="slide-dots" id="waterst-dots">
+        <div class="slide-dot active"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+        <div class="slide-dot"></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-label">
+          <span>Ypsilanti, MI · Mixed-Use Development</span>
+          <h3>Water Street Development</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Old House Vineyards -->
+    <div class="portfolio-item">
+      <div class="slide-show" id="oldhouse-slides" style="position:absolute;inset:0;">
+        <img src="projects/Old_House_Vineyards/Old_House_Vineyards1.png" class="active" alt="Old House Vineyards Virginia native landscape aerial view">
+        <img src="projects/Old_House_Vineyards/Old_House_Vineyards2.png" alt="Old House Vineyards Virginia entrance gate elevation native planting">
+      </div>
+      <div class="slide-dots" id="oldhouse-dots">
+        <div class="slide-dot active"></div>
+        <div class="slide-dot"></div>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-label">
+          <span>Culpeper, VA · Agricultural Landscape</span>
+          <h3>Old House Vineyards</h3>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /portfolio-grid -->
+</section>
+
+<!-- PROJECT PAGES INDEX -->
+<section class="bh-projects" id="projects" style="
+  padding: 7rem 4rem;
+  background: var(--warm-white);
+  border-top: 1px solid var(--linen);
+">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem;">
+    <div>
+      <p class="section-tag">Bunny Hill Native Landscapes</p>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,3vw,3rem); font-weight:300; color:var(--forest);">Project Pages</h2>
+    </div>
+    <p style="font-size:0.78rem; color:var(--ink-soft); font-weight:300; max-width:32ch; text-align:right; line-height:1.6;">Select a project to explore full drawings, plans, and documentation.</p>
+  </div>
+
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  ">
+
+    <a href="projects/project-BeecherHS.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Flint, MI · Education</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">Beecher High School</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Native landscape and outdoor learning environment for Beecher High School.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-Big_Boy_Rain_Garden.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Ann Arbor, MI · Stormwater</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">Big Boy Rain Garden</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Bioretention and stormwater management through native planting design.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-Mott_Childrens_Park.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Ann Arbor, MI · Community</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">Mott Children's Park</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Children's park integrating native plants and ecological play landscapes.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-North_Campus_Gateway.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Ann Arbor, MI · University of Michigan</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">North Campus Gateway</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Gateway landscape design connecting campus to surrounding natural corridors.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-Old_House_Vineyards.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Culpeper, VA · Agricultural</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">Old House Vineyards</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Agricultural landscape design for a historic Virginia vineyard property.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-UM_Dana_Garden.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Ann Arbor, MI · University of Michigan</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">U.M. Dana Garden</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Native courtyard garden for the University of Michigan Dana Building.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+    <a href="projects/project-Water_Street_Development.html" style="text-decoration:none;" class="reveal">
+      <article style="
+        border: 1px solid var(--linen);
+        border-radius: 4px;
+        padding: 2rem 2rem 1.6rem;
+        background: var(--cream);
+        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+        display:flex; flex-direction:column; gap:0.6rem;
+      " onmouseover="this.style.background='var(--sage-mist)';this.style.boxShadow='0 8px 24px rgba(61,92,58,0.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='var(--cream)';this.style.boxShadow='none';this.style.transform='none'">
+        <p style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); font-weight:400; margin:0;">Ypsilanti, MI · Mixed-Use</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin:0;">Water Street Development</h3>
+        <p style="font-size:0.82rem; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0; flex:1;">Mixed-use waterfront development with integrated native riparian plantings.</p>
+        <span style="font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem;">View project <span style="display:block;width:28px;height:1px;background:currentColor;"></span></span>
+      </article>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <h2 class="reveal">How the Work Unfolds</h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-number">01</div>
+      <h3>Site Discovery</h3>
+      <p>We walk your land together. Soil, drainage, sun, existing plants, and the quiet character of the place — nothing is overlooked before a pencil is lifted.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">02</div>
+      <h3>Design & Dialogue</h3>
+      <p>A detailed planting plan and layout, developed collaboratively. We refine until the design feels right for both the land and the people living with it.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">03</div>
+      <h3>Sourcing & Installation</h3>
+      <p>Locally-sourced native plants from trusted Mid-Atlantic and Virginia nurseries, installed with care. We work with a select team of skilled installers who share our ecological values.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-number">04</div>
+      <h3>Stewardship</h3>
+      <p>A native landscape evolves. We provide ongoing guidance through the seasons — when to cut back, when to let stand, and how to read what the garden is telling you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left reveal">
+    <p class="section-tag" style="color:var(--sage-light)">Get in Touch</p>
+    <h2>Let's begin with<br>your <em>land</em></h2>
+    <p>Every great landscape starts with a conversation. Tell us about your space, your vision, and what you hope to grow — and we'll take it from there.</p>
+    <div class="contact-info">
+      <a href="/cdn-cgi/l/email-protection#b8ddcad1d6f8ddcad1d6cbdbd0cdd4d9d6dccbdbd9c8ddcb96dbd7d5">✉ <span class="__cf_email__" data-cfemail="2540574c4b6540574c4b56464d5049444b415646445540560b464a48">[email&#160;protected]</span></a>
+      <a href="tel:+15715550100">✆ (248) 376-3383</a>
+      <a href="#">⊕ Northern Virginia · Loudoun, Fairfax, Arlington & Alexandria</a>
+    </div>
+  </div>
+  <div class="contact-form reveal">
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="Erin Amanda Schulz">
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="earschulz@gmail.com">
+    </div>
+    <div class="form-group">
+      <label>Project Type</label>
+      <input type="text" placeholder="Residential · Restoration · Consultation">
+    </div>
+    <div class="form-group">
+      <label>Tell Us About Your Space</label>
+      <textarea placeholder="Describe your property, vision, and what you're hoping to create..."></textarea>
+    </div>
+    <button class="submit-btn">Send Inquiry</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Bunny Hill Native Landscapes · Erin Amanda Schulz</div>
+  <p>© 2025 · Rooted in the Piedmont · Northern Virginia</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll reveal — add hidden first so animation only applies when JS runs
+document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.remove('hidden');
+        entry.target.classList.add('visible');
+      }, 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// ── SLIDESHOW ENGINE ──
+function initSlideshow(slidesId, dotsId, interval) {
+  const container = document.getElementById(slidesId);
+  if (!container) return;
+  const imgs = container.querySelectorAll('img');
+  const dotsEl = dotsId ? document.getElementById(dotsId) : null;
+  const dots = dotsEl ? dotsEl.querySelectorAll('.slide-dot') : [];
+  let current = 0;
+
+  function goTo(n) {
+    imgs[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
+    current = (n + imgs.length) % imgs.length;
+    imgs[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); }));
+  setInterval(() => goTo(current + 1), interval || 4000);
+}
+
+initSlideshow('mott-slides',        'mott-dots',        6500);
+initSlideshow('beecher-slides',     'beecher-dots',     7000);
+initSlideshow('bigboy-slides',      'bigboy-dots',      6000);
+initSlideshow('northcampus-slides', 'northcampus-dots', 6500);
+initSlideshow('oldhouse-slides',    'oldhouse-dots',    6500);
+initSlideshow('dana-slides',        'dana-dots',        6500);
+initSlideshow('waterst-slides',     'waterst-dots',     6500);
+
+</script>
+</body>
+</html>

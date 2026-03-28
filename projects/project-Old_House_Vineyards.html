@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Old House Vineyards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --sage: #7a9171;
+      --sage-light: #a8be9f;
+      --sage-pale: #d4e3cf;
+      --sage-mist: #edf4eb;
+      --forest: #3d5c3a;
+      --moss: #5c7355;
+      --cream: #f5f0e8;
+      --warm-white: #faf8f3;
+      --earth: #8b7355;
+      --linen: #e8e0d0;
+      --ink: #2a2a24;
+      --ink-soft: #4a4a40;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Jost', sans-serif;
+      background: linear-gradient(to bottom, var(--sage-mist), var(--warm-white));
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 240, 232, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(122, 145, 113, 0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--forest);
+      text-transform: uppercase;
+    }
+
+    .nav-logo img {
+      width: 35px;
+      height: 35px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .nav-back {
+      font-size: 0.9rem;
+      color: var(--forest);
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--sage);
+    }
+
+    .nav-back:hover {
+      background: var(--sage);
+      color: white;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 160px 1.25rem 3rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background: var(--sage-mist);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--sage);
+    }
+
+    section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .slideshow {
+      margin-top: 1rem;
+    }
+    .slide-track {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--linen);
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .slide-btn {
+      background: var(--sage);
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .slide-btn:hover {
+      background: var(--forest);
+    }
+    .slide-counter {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      min-width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <img src="../Images/Retlogo.png" alt="Bunny Hill Native Landscapes — home" style="width: 100px; height: auto;" />
+    </a>
+    <a class="nav-back" href="../index.html">← Return to main site</a>
+  </nav>
+
+  <main>
+    <h1>Project Old House Vineyards</h1>
+    <div class="meta">Status: Completed · Owner: Erin Amanda Schulz · Bunny Hill Native Landscapes</div>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Located in the heart of Virginia's wine country within the quiet county of Culpeper, Old House
+        Vineyards has become a well-known staple for exquisite wines, beautiful scenery, and world-class
+        large events. After broadening their scope in 2014 to include the production of both wine and
+        spirits on the property, up-to-date and eye-catching signage was commissioned to encompass both
+        aspects of the business. Taking into account the newly widened main drive, sunny location, and
+        relaxed country atmosphere, the main sign was kept to a simple faux stone wall with complementary
+        base plantings providing year-round interest. Mirrored wall sections and planting plans provide
+        symmetrical balance to either side of the drive, while specially designed alcoholic-process
+        inspired signage provides wayfinding — exposed copper piping reminiscent of large liquor stills
+        points toward the new distillery, while a flattened wooden barrel indicates the winery's tasting
+        room.
+      </p>
+    </section>
+
+    <section>
+      <h2>Design Goals</h2>
+      <p>
+        Commission eye-catching entrance signage that reflects both the winery and distillery sides of
+        the business · Complement the widened main drive with a balanced, symmetrical front gate design ·
+        Use faux stone construction and base plantings to provide year-round visual interest ·
+        Incorporate alcoholic-process inspired wayfinding elements — copper pipe for the distillery,
+        wooden barrel for the tasting room · Maintain a relaxed, country atmosphere consistent with the
+        vineyard's character and setting.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Slides</h2>
+      <p>Design documentation and presentation slides for the Old House Vineyards entrance signage and front gate planting.</p>
+
+      <div class="slideshow">
+        <div class="slide-track">
+          <img class="slide active" src="Old_House_Vineyards/Old_House_Vineyards1.png" alt="Site Overview and Design Narrative" />
+          <img class="slide" src="Old_House_Vineyards/Old_House_Vineyards2.png" alt="Front Gate Section, Elevation, and Planting Plan" />
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="changeSlide(-1)">&#8592; Prev</button>
+          <span class="slide-counter"><span id="current-slide">1</span> / 2</span>
+          <button class="slide-btn" onclick="changeSlide(1)">Next &#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Current Status</h2>
+      <p>
+        Design and construction documents are complete. Deliverables include a front gate section drawing,
+        front gate elevation, and a mirrored front gate planting plan showing seasonal interest plantings
+        to either side of the main drive entry. The signage and planting installation at the Culpeper,
+        Virginia property has been completed.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(dir) {
+      slides[current].classList.remove('active');
+      current = (current + dir + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      document.getElementById('current-slide').textContent = current + 1;
+    }
+  </script>
+
+</body>
+</html>
