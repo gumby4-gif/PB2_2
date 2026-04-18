@@ -1,0 +1,1191 @@
+  :root {
+    --sage: #7a9171;
+    --sage-light: #a8be9f;
+    --sage-pale: #d4e3cf;
+    --sage-mist: #edf4eb;
+    --forest: #3d5c3a;
+    --moss: #5c7355;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f3;
+    --earth: #8b7355;
+    --linen: #e8e0d0;
+    --ink: #2a2a24;
+    --ink-soft: #4a4a40;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.4rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,232,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(122,145,113,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--forest);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--forest); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--forest);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Decorative botanical line art */
+  .botanical-bg {
+    position: absolute;
+    top: -2rem;
+    right: -3rem;
+    width: 340px;
+    opacity: 0.08;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.05;
+    animation: fadeUp 1s ease 0.15s both;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .hero-name .amp {
+    font-style: italic;
+    color: var(--sage-pale);
+    font-size: 0.8em;
+  }
+
+  .hero-tagline {
+    margin-top: 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: var(--sage-pale);
+    font-weight: 200;
+    line-height: 1.8;
+    max-width: 28ch;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    text-decoration: none;
+    font-weight: 400;
+    transition: gap 0.3s, color 0.3s;
+    animation: fadeUp 1s ease 0.45s both;
+  }
+
+  .hero-cta:hover { gap: 1.6rem; color: var(--warm-white); }
+
+  .hero-cta .line {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s;
+  }
+
+  .hero-cta:hover .line { width: 60px; }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--sage-mist);
+  }
+
+  .hero-image-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  /* Title + photo row */
+  .hero-name-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+
+  /* Erin portrait sits beside the title */
+  .hero-left-portrait {
+    width: 145px;
+    height: 200px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(168,190,159,0.35);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    margin-top: 0.2rem;
+  }
+
+  .hero-left-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* Hero right: two images stacked, each filling half the panel */
+  .hero-image-mosaic {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .mosaic-main {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #7a9e75 0%, #4a7344 100%);
+  }
+
+  .mosaic-secondary {
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #9bb595 0%, #6e9469 100%);
+  }
+
+  .mosaic-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  /* Garden: show full image without cropping */
+  .mosaic-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .mosaic-main:hover img,
+  .mosaic-secondary:hover img { transform: scale(1.05); }
+
+  .portrait-overlay { display: none; }
+  .portrait-fallback { display: none; }
+  .portrait-placeholder { display: none; }
+  .hero-thumb-strip { display: none; }
+  .mosaic-portrait { display: none; }
+
+  .hero-right-label {
+    position: absolute;
+    bottom: 3rem;
+    right: 2.5rem;
+    text-align: right;
+  }
+
+  .hero-right-label p {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 300;
+  }
+
+  /* ── CREDENTIALS ── */
+  .credentials {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top: 1px solid var(--linen);
+    padding-top: 2rem;
+  }
+
+  .cred-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cred-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cred-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-top: 0.1rem;
+  }
+
+  .cred-logo-um {
+    background: var(--sage-mist);
+    color: var(--forest);
+    border: 1px solid var(--sage-pale);
+  }
+
+  .cred-logo-rg {
+    background: var(--forest);
+    color: var(--sage-pale);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cred-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .cred-text strong {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--forest);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .cred-text span {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .cred-date {
+    font-size: 0.7rem !important;
+    color: var(--sage) !important;
+    letter-spacing: 0.05em;
+  }
+
+  .cred-description {
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 52ch;
+  }
+
+  /* ── INTRO / ABOUT ── */
+  .intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    min-height: 80vh;
+    background: var(--cream);
+  }
+
+  .intro-left {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--linen);
+  }
+
+  .section-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .intro-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--forest);
+  }
+
+  .intro-left h2 em { font-style: italic; }
+
+  .intro-right {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .intro-right p {
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 52ch;
+  }
+
+  .intro-right p strong {
+    color: var(--forest);
+    font-weight: 500;
+  }
+
+  /* Erin's name feature */
+  .name-feature {
+    margin-top: 2.5rem;
+    padding: 2rem 2.4rem;
+    border-left: 2px solid var(--sage);
+    background: var(--sage-mist);
+  }
+
+  .name-feature .full-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--forest);
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  .name-feature .full-name span {
+    display: block;
+    font-size: 0.62rem;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--sage-mist);
+    padding: 7rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sage-light), transparent);
+  }
+
+  .philosophy-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+    line-height: 1.5;
+    margin: 2rem 0;
+  }
+
+  .philosophy cite {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-style: normal;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 0;
+    background: var(--warm-white);
+  }
+
+  .services-header {
+    padding: 0 4rem 4rem;
+  }
+
+  .services-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--linen);
+  }
+
+  .service-card {
+    padding: 3.5rem 3.5rem;
+    border-right: 1px solid var(--linen);
+    transition: background 0.4s;
+    cursor: default;
+  }
+
+  .service-card:last-child { border-right: none; }
+
+  .service-card:hover { background: var(--sage-mist); }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.84rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  /* ── NATIVE PLANTS FEATURE ── */
+  .plants-feature {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 70vh;
+    background: var(--forest);
+    overflow: hidden;
+  }
+
+  .plants-text {
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .plants-text .section-tag { color: var(--sage-light); }
+
+  .plants-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .plants-text h2 em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .plants-text p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 44ch;
+    margin-bottom: 1rem;
+  }
+
+  .plant-list {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 2rem;
+    list-style: none;
+  }
+
+  .plant-list li {
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--sage-light);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .plant-list li::before {
+    content: '—';
+    color: var(--sage);
+    font-size: 0.6rem;
+  }
+
+  .plants-visual {
+    background: linear-gradient(160deg, #9bb595 0%, #6e9469 50%, #4a7344 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Botanical SVG illustration */
+  .botanical-art {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── PORTFOLIO GRID ── */
+  .portfolio {
+    padding: 7rem 4rem;
+    background: var(--cream);
+  }
+
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  .portfolio-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-weight: 300;
+    color: var(--forest);
+  }
+
+  .portfolio-header a {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: gap 0.3s;
+  }
+
+  .portfolio-header a:hover { gap: 1.2rem; }
+
+  /* ── FEATURED PROJECTS (Mott + Beecher) ── */
+  .portfolio-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .portfolio-feature-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 480px;
+  }
+
+  .portfolio-feature-card .portfolio-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease;
+  }
+
+  .portfolio-feature-card:hover .portfolio-thumb { transform: scale(1.05); }
+
+  .feature-badge {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.8rem;
+    z-index: 3;
+    background: var(--sage);
+    color: var(--warm-white);
+    font-size: 0.55rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.35rem 0.85rem;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .portfolio-feature-card .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,55,28,0.88) 0%, rgba(30,55,28,0.2) 55%, transparent 100%);
+    opacity: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.2rem 2.4rem;
+    z-index: 2;
+  }
+
+  .feature-label {
+    color: var(--warm-white);
+  }
+
+  .feature-label .project-type {
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.45rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  .feature-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 0.7rem;
+  }
+
+  .feature-label .project-desc {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 44ch;
+    font-family: 'Jost', sans-serif;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s 0.05s, transform 0.4s 0.05s;
+  }
+
+  .portfolio-feature-card:hover .project-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .feature-label .project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.8rem;
+  }
+
+  .project-tag {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-pale);
+    border: 1px solid rgba(168,190,159,0.4);
+    padding: 0.25rem 0.65rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  }
+
+  /* ── STANDARD PORTFOLIO GRID (5 remaining) ── */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+  }
+
+  .portfolio-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    min-height: 260px;
+  }
+
+  /* Left card spans both rows */
+  .portfolio-item:first-child {
+    grid-row: span 2;
+    min-height: 522px;
+  }
+
+  .portfolio-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  /* For gradient placeholder divs acting as thumbs */
+  div.portfolio-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.7s ease;
+  }
+
+  .portfolio-item:hover .portfolio-thumb { transform: scale(1.06); }
+
+  .portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(61,92,58,0.75) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+  .portfolio-label {
+    color: var(--warm-white);
+  }
+
+  .portfolio-label span {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .portfolio-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  /* Gradient placeholders for portfolio */
+  /* Featured */
+  .port-mott   { position:absolute; inset:0; background: linear-gradient(145deg, #4a7c6e 0%, #2d5c4e 50%, #1e3d34 100%); display:flex; align-items:center; justify-content:center; }
+  .port-beecher { position:absolute; inset:0; background: linear-gradient(145deg, #6a8c5a 0%, #3d6638 50%, #2a4a28 100%); display:flex; align-items:center; justify-content:center; }
+  /* Standard */
+  .port-1 { position:absolute; inset:0; background: linear-gradient(135deg, #7a9e75 0%, #4d7048 100%); display:flex; align-items:center; justify-content:center; }
+  .port-2 { position:absolute; inset:0; background: linear-gradient(135deg, #8aac84 0%, #5f8a5a 100%); display:flex; align-items:center; justify-content:center; }
+  .port-3 { position:absolute; inset:0; background: linear-gradient(135deg, #9bb595 0%, #6e8f69 100%); display:flex; align-items:center; justify-content:center; }
+  .port-4 { position:absolute; inset:0; background: linear-gradient(135deg, #a3b89e 0%, #7a9575 100%); display:flex; align-items:center; justify-content:center; }
+  .port-5 { position:absolute; inset:0; background: linear-gradient(135deg, #7d9e78 0%, #526e4e 100%); display:flex; align-items:center; justify-content:center; }
+
+  /* ── IMAGE SLIDESHOW for featured cards ── */
+  .slide-show {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-show img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  .slide-show img.active { opacity: 1; }
+
+  /* Dot indicators */
+  .slide-dots {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 2.4rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 4;
+  }
+
+  .slide-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+
+  .slide-dot.active {
+    background: var(--sage-light);
+    transform: scale(1.3);
+  }
+  .process {
+    padding: 7rem 4rem;
+    background: var(--warm-white);
+  }
+
+  .process h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-weight: 300;
+    color: var(--forest);
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .process-step {
+    position: relative;
+  }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--sage-pale);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 0.8rem;
+  }
+
+  .process-step p {
+    font-size: 0.82rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--forest);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contact-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  .contact-left p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--sage-pale);
+    font-weight: 300;
+    max-width: 40ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-info a {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    color: var(--sage-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: color 0.3s;
+  }
+
+  .contact-info a:hover { color: var(--warm-white); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 300;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(168,190,159,0.25);
+    padding: 0.9rem 1.2rem;
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    resize: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.2);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--sage-light);
+    background: rgba(255,255,255,0.09);
+  }
+
+  .form-group textarea { min-height: 110px; }
+
+  .submit-btn {
+    margin-top: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--sage-light);
+    color: var(--sage-light);
+    padding: 1rem 2.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+    font-weight: 300;
+  }
+
+  .submit-btn:hover {
+    background: var(--sage-light);
+    color: var(--forest);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--sage-pale);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+
+  footer p {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--warm-white); }
+  ::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 2px; }
+
+/*
+color: var(--sage-pale) gives it a softer tone so the eye reads "Bunny Hill Native Landscapes" first, then settles on her name
+margin-top: 0.4rem adds a little breathing room between the title and her name */
+
+
+.hero-name .hero-byline {
+  font-size: 0.45em;        /* roughly half the h1 size */
+  font-weight: 300;
+  font-style: normal;
+  color: var(--sage-pale);  /* slightly softer than the main title */
+  letter-spacing: 0.12em;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* ── CATEGORY NAVIGATION ── */
+  .categories-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+  }
+
+  .categories-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .categories-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .category-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border: 1px solid var(--linen);
+    border-radius: 2px;
+    padding: 0.55rem 1.1rem;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+    background: transparent;
+  }
+
+  .category-btn:hover {
+    color: var(--forest);
+    border-color: var(--sage);
+    background: var(--sage-mist);
+  }
+
+  @media (max-width: 768px) {
+    .categories-section { padding: 3rem 1.5rem 1.5rem; }
+  }
+
+/*end of main.css*/
+
+
+

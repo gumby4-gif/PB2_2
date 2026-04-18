@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Spotlights — Bunny Hill Landscape Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+  <style>
+    :root {
+      --sage: #7a9171;
+      --sage-light: #a8be9f;
+      --sage-pale: #d4e3cf;
+      --sage-mist: #edf4eb;
+      --forest: #3d5c3a;
+      --moss: #5c7355;
+      --cream: #f5f0e8;
+      --warm-white: #faf8f3;
+      --earth: #8b7355;
+      --linen: #e8e0d0;
+      --ink: #2a2a24;
+      --ink-soft: #4a4a40;
+    }
+
+    body { background: var(--warm-white); }
+
+    /* ── CATEGORY PAGE ── */
+    .category-hero {
+      padding: 6rem 4rem 3rem;
+      background: linear-gradient(160deg, var(--sage-mist) 0%, var(--cream) 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--linen);
+    }
+
+    .category-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .category-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 300;
+      color: var(--forest);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .category-hero p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .category-meta {
+      margin-top: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      padding: 1.2rem 4rem;
+      display: flex;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover { color: var(--forest); }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    /* ── POST GRID ── */
+    .category-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 4rem 6rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .post-card {
+      background: var(--cream);
+      border: 1px solid var(--linen);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(61,92,58,0.1);
+    }
+
+    .post-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: var(--sage-mist);
+    }
+
+    .post-card-img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--sage-pale) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post-card-img-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+      stroke: var(--forest);
+      fill: none;
+      stroke-width: 1;
+    }
+
+    .post-card-body {
+      padding: 1.8rem;
+    }
+
+    .post-card-tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-card-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-card-body p {
+      font-size: 0.83rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 1.4rem;
+    }
+
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--linen);
+      padding-top: 1rem;
+    }
+
+    .post-card-date {
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 300;
+    }
+
+    .post-card-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.3s, color 0.3s;
+    }
+
+    .post-card-link:hover { gap: 0.9rem; }
+
+    .post-card-link .arrow {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: currentColor;
+      position: relative;
+      transition: width 0.3s;
+    }
+
+    .post-card-link:hover .arrow { width: 30px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--ink-soft);
+    }
+
+    .empty-state p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .category-hero { padding: 5rem 2rem 2.5rem; }
+      .category-container { padding: 2rem 1.5rem 4rem; }
+      .back-link { padding: 1rem 1.5rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back to Blog -->
+  <a href="../index.html" class="back-link">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Journal
+  </a>
+
+  <!-- Category Hero -->
+  <section class="category-hero">
+    <p class="category-eyebrow">Category</p>
+    <h1>Project Spotlights</h1>
+    <p>A closer look at completed projects — the challenges, the choices, and how each landscape settled into its place over time.</p>
+    <p class="category-meta"><!-- e.g. "4 Posts" — update manually --> Posts</p>
+  </section>
+
+  <!-- Posts Grid -->
+  <div class="category-container">
+    <div class="posts-grid">
+
+      <!--
+        ADD POST CARDS HERE.
+        Copy and paste the block below for each post, then update:
+        src, alt, h2 (title), p (excerpt), date, and href.
+
+      <article class="post-card">
+        <img class="post-card-img" src="../assets/images/YOUR-IMAGE.jpg" alt="Post Title">
+        <div class="post-card-body">
+          <p class="post-card-tag">Project Spotlights</p>
+          <h2>Post Title Here</h2>
+          <p>A short excerpt describing the post goes here.</p>
+          <div class="post-card-footer">
+            <span class="post-card-date">Month DD, YYYY</span>
+            <a href="../posts/post-slug/index.html" class="post-card-link">
+              Read <span class="arrow"></span>
+            </a>
+          </div>
+        </div>
+      </article>
+      -->
+
+      <!-- EMPTY STATE — remove once posts are added -->
+      <div class="empty-state">
+        <p>Posts coming soon.</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
